@@ -12,11 +12,11 @@ export class ProductListComponent implements OnInit {
   imageWidth: number = 50;
   imageMargin: number = 2;
   showImage: boolean = false;
-  _listFilter: string;
-  errorMsg: string;
+  _listFilter: string='';
+  errorMsg: string ='';
 
   constructor(private prodService: ProductService) {
-    console.log("contructor called " + this.products.length);
+  
   }
 
   onRatingClicked(message: string): void {
@@ -45,7 +45,7 @@ export class ProductListComponent implements OnInit {
     console.log("nginit called");
     this.prodService.getProducts().subscribe({
       next: products => {
-        products => this.products = products;
+        this.products = products;
         this.filteredProduct = this.products; 
       },
           error:err =>  this.errorMsg = err 
