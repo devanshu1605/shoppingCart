@@ -1,0 +1,28 @@
+<div class="card-header">
+  {{show ? "Add Book" : "Book Added!! " }}
+</div>
+<div>
+
+</div>
+<div style="padding-top:20px " class="container" *ngIf="show">
+  <div class="form-group">
+    <label style="margin-right: 32px">
+      Book Name:
+    </label>
+    <input type="text" [formControl]="bookname" />
+  </div>
+  <div class="form-group">
+    <label style="margin-right: 48px">
+      Library Id:
+    </label>
+    <select [formControl]="libname">
+      <option *ngFor="let lib of libraries">{{lib.libraryId}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button style="margin-left: 190px" (click)="addBook()" class="btn btn-primary">Add Book</button>
+  </div>
+</div>
+<div style="padding-left: 225px">
+  <b><a [routerLink]="['/home']">Home</a></b>
+</div>

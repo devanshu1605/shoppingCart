@@ -1,0 +1,22 @@
+<div class="table responsive">
+  <table style="padding-left:500px">
+    <thead>
+      <tr>
+        <th>Book Name</th>
+        <th>Book Id</th>
+        <th>Library Name</th>
+        <th>Option</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td><b>{{book.bookName}}</b></td>
+        <td><b>{{book.bookId}}</b></td>
+        <td><b>{{book.libraryName}}</b></td>
+        <td><button class="btn btn-primary" [routerLink]="['/update', book.bookId]">Update</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div><button class="btn btn-primary" [routerLink]="['/addBook']">Add Book </button></div>
+</div>
+

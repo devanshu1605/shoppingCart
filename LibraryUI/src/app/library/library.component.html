@@ -1,0 +1,19 @@
+<div class="table responsive">
+  <table style="padding-left:500px">
+    <thead>
+      <tr>
+        <th>Library Name</th>
+        <th>Library Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lib of libraries">
+        <td><button class="btn btn-primary" [routerLink]="['/booklist', lib.libraryId]" (click)="callBookService(lib.libraryId)">{{lib.libraryName}}</button></td>
+        <td>{{lib.libraryId}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="booklist">
+  <book-list [libraryId]="libraryId" [libraries]="libraries"></book-list>
+</div>
